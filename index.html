@@ -1,9 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" ng-app="LimpiaEmailsApp">
 <head>
-	<title>Limpia emails</title>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Limpia emails</title>
 </head>
-<body>
-
+<body ng-controller="MainCtrl">
+    <div class="container">
+        <div class="header">
+            <h1 class="text-muted">
+                <span class="glyphicon glyphicon-envelope"></span>
+                Limpia emails
+            </h1>
+        </div>
+        <div id="action-box">
+            <div id="input" class="panel" ng-show="currentPage == 0">
+                <div class="panel-body">
+                   <form method="POST" role="form" name="inputForm" ng-submit="cleanEmails()">
+                        <div class="form-group">
+                            <label for="">Emails para limpiar</label>
+                            <textarea 
+                                class="form-control"
+                                id="test-entrada"
+                                name="sourceText"
+                                placeholder="Pega aca el texto con emails que quieres limpiar"
+                                rows="15"
+                                required="yes"
+                                ng-model="sourceText"></textarea>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-primary btn-lg" 
+                                    ng-disabled="sourceText.length == 0">
+                                Limpiar <span class="glyphicon glyphicon-chevron-right"></span>
+                            </button>
+                        </div>
+                   </form>
+                </div>
+            </div>
+            <div id="output" class="panel" ng-show="currentPage==1" class="ng-hide">
+                <div class="panel-body">
+                    <h2>Emails encontrados</h2>
+                    <pre class="well">{{resultText}}</pre>
+                    <div class="pull-left">
+                        <button class="btn btn-primary btn-lg" ng-click="goBack()">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="no-match" class="panel" ng-show="currentPage==2" class="ng-hide">
+                <div class="panel-body">
+                    <h2>Lo siento, no encontre ningun email en ese texto</h2>
+                    <object type="image/svg+xml" data="chango.svg">
+                        Lo siento, tu navegador es chafa y no muestra imagenes SVG, que son la moda.
+                    </object>
+                    <div>SVG made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+                    <button class="btn btn-primary btn-lg" ng-click="goBack()">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        Regresar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; <a href="http://www.noenieto.com">Noe Nieto</a> 2014</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

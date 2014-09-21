@@ -1,0 +1,54 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #8C4646;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #F2AE72;
+}
+
+.panel {
+    border-color: #F2E394;
+    background-color: #F2E394;
+}
+
+#no-match .panel-body {
+    text-align: center;
+}
+
+#output pre {
+    height: 300px;
+    overflow: visible;
+}
+
+.ng-hide {
+    //this is just another form of hiding an element
+    display:block!important;
+    position:absolute;
+    top:-9999px;
+    left:-9999px;
+}
+
+.form-control {
+    background-color: #F2E394;
+    color: black;
+    border-color: black;
+}
+
+.btn-primary, .btn-primary:hover{
+    background-color: #D96459;
+    border-color: #D96459;
+}
+
+.btn-primary:hover {
+    box-shadow: 1px 1px 1px #588C7E;
+}
+.footer {
+    color: #F2AE72;
+}
+
+.footer a, .footer a:link {
+    color: #F2AE72;
+}
