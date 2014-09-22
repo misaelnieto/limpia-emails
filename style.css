@@ -1,3 +1,12 @@
+/* Colores del tema: 
+    https://kuler.adobe.com/Campfire-color-theme-2528696/
+    Verde: #588C7E;
+    Amarillo: #F2E394;
+    naranja-claro: #F2AE72;
+    naranja-fuerte: #D96459;
+    Rojo: #8C4646;
+
+*/
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -7,6 +16,7 @@ body {
 .header h1 {
     font-size: 24px;
     color: #F2AE72;
+    text-shadow: 1px 1px 3px #588C7E;
 }
 
 .panel {
@@ -14,13 +24,18 @@ body {
     background-color: #F2E394;
 }
 
+label {
+    color: #588C7E;
+}
+
 #no-match .panel-body {
     text-align: center;
+    color: #588C7E;
 }
 
 #output pre {
     height: 300px;
-    overflow: visible;
+    overflow: overlay;
 }
 
 .ng-hide {
@@ -34,7 +49,12 @@ body {
 .form-control {
     background-color: #F2E394;
     color: black;
-    border-color: black;
+    border-color: #588C7E;
+}
+
+.form-control:focus {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88, 140, 126, 0.6);
+    border-color: #588C7E;
 }
 
 .btn-primary, .btn-primary:hover{
@@ -45,6 +65,11 @@ body {
 .btn-primary:hover {
     box-shadow: 1px 1px 1px #588C7E;
 }
+
+.btn-primary:disabled {
+    background-color: #588C7E;
+}
+
 .footer {
     color: #F2AE72;
 }
